@@ -2,7 +2,7 @@
 RETURN=0
 
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
-if [[ $current_branch = 'hook' || $current_branch = 'rc' ]]; then
+if [[ $current_branch = 'master' || $current_branch = 'rc' ]]; then
   read -p "You're about to push, are you sure you won't break the build? " -n 1 -r < /dev/tty
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]
