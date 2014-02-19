@@ -1,0 +1,47 @@
+#!/bin/bash
+RETURN=0
+
+current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+if [[ $current_branch = 'hook' || $current_branch = 'rc' ]]; then
+  read -p "You're about to push, are you sure you won't break the build? " -n 1 -r < /dev/tty
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+
+    # Stash unstaged changes before running all services
+    git stash -q --keep-index
+
+    # Run all tests
+    echo
+    echo -e "Running tests..."
+
+    CMD='rspec'
+    RESPONSE=`${CMD} --format=progress | grep "example"| grep "fail"| awk {'print $3'}`
+    if [ $RESPONSE -ne 0 ]
+    then
+      echo -e "Can't commit! You've broken $RESPONSE tests!"
+      echo -e "Please run rspec mannualy!"
+      $RETURN=1
+    fi
+    echo -e "All tests passed.\n"
+    echo "If you want to see a coverage report, open: coverage/index.html"
+
+    # Syntax analize
+    echo -e "Syntax analyzing..."
+    RESPONSE=`rubocop -n |grep 'no offences detected'`
+
+    if [[ -z $RESPONSE ]]
+    then
+      echo -e "Can't commit! You are not following coding style!"
+      echo -e "Please run rubocop mannualy!\n"
+      exit
+    fi
+
+    echo -e "All code are styled.\n"
+
+    # Unstash
+    git stash pop -q
+    exit $RETURN # push will execute
+  fi
+  exit 1 # push will not execute
+fi
