@@ -2,7 +2,7 @@
 RETURN=0
 
 current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
-if [[ $current_branch = 'hook' || $current_branch = 'rc' ]]; then
+if [[ $current_branch = 'master' || $current_branch = 'rc' ]]; then
   read -p "You're about to push, are you sure you won't break the build? " -n 1 -r < /dev/tty
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]
@@ -21,7 +21,7 @@ if [[ $current_branch = 'hook' || $current_branch = 'rc' ]]; then
     then
       echo -e "Can't commit! You've broken $RESPONSE tests!"
       echo -e "Please run rspec mannualy!"
-      $RETURN=1
+      exit 1
     fi
     echo -e "All tests passed.\n"
     echo "If you want to see a coverage report, open: coverage/index.html"
@@ -34,7 +34,7 @@ if [[ $current_branch = 'hook' || $current_branch = 'rc' ]]; then
     then
       echo -e "Can't commit! You are not following coding style!"
       echo -e "Please run rubocop mannualy!\n"
-      exit
+      exit 1
     fi
 
     echo -e "All code are styled.\n"
