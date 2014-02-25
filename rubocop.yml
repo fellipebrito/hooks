@@ -1,0 +1,33 @@
+# https://github.com/bbatsov/rubocop/blob/master/config/enabled.yml
+LineLength:
+    Max: 140
+AndOr:
+  Description: 'Use &&/|| instead of and/or.'
+  Enabled: false
+Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+DefWithParentheses:
+  Description: 'Use def with parentheses when there are arguments.'
+  Enabled: false
+MethodDefParentheses:
+  Description: >-
+                 Checks if the method definitions have or don't have
+                 parentheses.
+  Enabled: false
+# RegexpLiteral:
+#   Description: 'Use %r for regular expressions'
+#   Enabled: false
+AllCops:
+  Includes:
+    - Rakefile
+    - config.ru
+  Excludes:
+    - unicorn.rb
+    - db/**
+    - config/**
+    - script/**
+    - !ruby/regexp /old_and_unused\.rb$/
+    - vendor/**
+    - spec/**
+  RunRailsCops: true
