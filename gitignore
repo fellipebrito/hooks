@@ -1,6 +1,7 @@
 # Ignore bundler config.
 /.bundle
 /vendor/bundle
+/vendor/hooks
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
