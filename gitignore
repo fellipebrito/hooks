@@ -25,3 +25,8 @@ coverage
 /public/uploads/*
 .rubocop.yml
 .gitignore
+
+# Capistrano
+Capfile
+config/deploy.rb
+config/deploy/*
