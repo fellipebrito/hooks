@@ -30,3 +30,4 @@ coverage
 Capfile
 config/deploy.rb
 config/deploy/*
+config/id_rsa
