@@ -27,6 +27,6 @@ coverage
 
 # Capistrano
 Capfile
-config/deploy.rb
+#config/deploy.rb
 config/id_rsa
 lib/capistrano
