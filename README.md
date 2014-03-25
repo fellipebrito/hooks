@@ -10,7 +10,7 @@ Validates your code before push
 Installation
 ----
 
-It comes with a rake task that create alias files in the correct places. In order to install it please make sure you add this files inside **vendor/hook**, then from this folder run *rake install*
+It comes with a rake task that create alias files in the correct places. In order to install it please make sure you add this files inside **vendor/hooks**, then from this folder run *rake install*
 
 [RSpec]:http://rspec.info/
 [rubocop]:https://github.com/colszowka/simplecov
