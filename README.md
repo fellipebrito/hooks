@@ -10,7 +10,7 @@ Validates your code before push
 Requirements
 ---
 
-In order to use git push hooks you need to update your git to 1.8+, if you don't know how to that, here is a [git update guide].
+In order to use git push hooks you need to **update your git to 1.8+**, if you don't know how to that, here is a [git update guide].
 
 Installation
 ----
