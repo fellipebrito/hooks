@@ -19,10 +19,10 @@ MethodDefParentheses:
 #   Description: 'Use %r for regular expressions'
 #   Enabled: false
 AllCops:
-  Includes:
+  Include:
     - Rakefile
     - config.ru
-  Excludes:
+  Exclude:
     - unicorn.rb
     - db/**
     - config/**
