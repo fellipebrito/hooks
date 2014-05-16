@@ -15,6 +15,9 @@ MethodDefParentheses:
                  Checks if the method definitions have or don't have
                  parentheses.
   Enabled: false
+DotPosition:
+  Description: 'Checks the position of the dot in multi-line method calls.'
+  Enabled: false
 # RegexpLiteral:
 #   Description: 'Use %r for regular expressions'
 #   Enabled: false
