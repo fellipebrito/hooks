@@ -2,35 +2,26 @@
 LineLength:
     Max: 140
 AndOr:
-  Description: 'Use &&/|| instead of and/or.'
   Enabled: false
 Documentation:
-  Description: 'Document classes and non-namespace modules.'
   Enabled: false
 DefWithParentheses:
-  Description: 'Use def with parentheses when there are arguments.'
   Enabled: false
 MethodDefParentheses:
-  Description: >-
-                 Checks if the method definitions have or don't have
-                 parentheses.
   Enabled: false
 DotPosition:
-  Description: 'Checks the position of the dot in multi-line method calls.'
   Enabled: false
-# RegexpLiteral:
-#   Description: 'Use %r for regular expressions'
-#   Enabled: false
 AllCops:
   Include:
     - Rakefile
     - config.ru
   Exclude:
     - unicorn.rb
-    - db/**
-    - config/**
-    - script/**
+    - db/**/*
+    - spec/**/*
+    - config/**/*
+    - script/**/*
+    - vendor/**/*
+    - features/**/*
     - !ruby/regexp /old_and_unused\.rb$/
-    - vendor/**
-    - spec/**
   RunRailsCops: true
