@@ -29,4 +29,5 @@ coverage
 # Capfile
 config/deploy
 config/id_rsa
+config/settings.yml
 lib/capistrano
