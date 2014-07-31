@@ -8,8 +8,8 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log
-/tmp
+log/*
+tmp/*
 
 # Ignore other unneeded files.
 database.yml
@@ -24,6 +24,10 @@ coverage
 /public/uploads/*
 .rubocop.yml
 .gitignore
+output/*
+nohup.out
+.yardoc
+yardoc
 
 # Capistrano
 # Capfile
