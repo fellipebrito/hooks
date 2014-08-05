@@ -23,6 +23,7 @@ doc/
 coverage
 /public/uploads/*
 .rubocop.yml
+.hound.yml
 .gitignore
 output/*
 nohup.out
