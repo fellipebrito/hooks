@@ -16,12 +16,13 @@ AllCops:
     - Rakefile
     - config.ru
   Exclude:
-    - unicorn.rb
     - db/**/*
+    - docs/**/*
     - spec/**/*
     - config/**/*
     - script/**/*
     - vendor/**/*
     - features/**/*
+    - unicorn.rb
     - !ruby/regexp /old_and_unused\.rb$/
   RunRailsCops: true
