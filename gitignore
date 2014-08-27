@@ -35,3 +35,6 @@ config/deploy
 config/id_rsa
 config/settings.yml
 lib/capistrano
+
+# https://github.com/bkeepers/dotenv
+.env
