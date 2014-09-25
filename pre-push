@@ -28,7 +28,7 @@ if [[ $current_branch = 'master' || $current_branch = 'rc' ]]; then
 
     # Syntax analize
     echo -e "Syntax analyzing..."
-    RESPONSE=`rubocop -n |grep 'no offences detected'`
+    RESPONSE=`rubocop -n |grep 'no offenses detected'`
 
     if [[ -z $RESPONSE ]]
     then
