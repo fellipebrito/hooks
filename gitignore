@@ -21,6 +21,7 @@ database.yml
 .secret
 coverage
 /public/uploads/*
+/public/assets
 .rubocop.yml
 .hound.yml
 .gitignore
