@@ -11,6 +11,8 @@ MethodDefParentheses:
   Enabled: false
 DotPosition:
   Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
 AllCops:
   Include:
     - Rakefile
